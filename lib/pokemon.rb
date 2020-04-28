@@ -12,10 +12,8 @@ class Pokemon
   end
 
   def self.save(name, type, database_connection)
-    if self.id
     database_connection.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
   end
-end
 
   def self.find(id, database_connection)
     pokemon = database_connection.execute("SELECT * FROM pokemon WHERE id = ?", id).flatten
