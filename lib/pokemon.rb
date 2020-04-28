@@ -2,7 +2,7 @@ class Pokemon
   attr_reader :id, :name, :type, :hp, :db
   @@all = []
 
-  def initialize(id, name, type, hp= nil, db)
+  def initialize (id:, name:, type:, hp: nil, db:)
     @id = id
     @name = name
     @type = type
@@ -21,7 +21,7 @@ class Pokemon
     type = pokemon[2]
     hp = pokemon[3]
 
-    pokemon_inst = Pokemon.new(id= id, name= name, type= type, hp= hp, db= database_connection)
+    pokemon_inst = Pokemon.new(id: id, name: name, type: type, hp: hp, db: database_connection)
   end
 
   def alter_hp(new_hp, database_connection)
