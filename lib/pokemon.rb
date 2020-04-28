@@ -11,7 +11,7 @@ class Pokemon
     @@all << self
   end
 
-def self.save
+def self.save(name, type, database_connection)
  if self.id
    self.update
  else
